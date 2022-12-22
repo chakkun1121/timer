@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>WebTimer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <h3 class="free-time">Web_Timer</h3>
+  <div class="time-view">
+    <div class="free-block">
+      <input type="text" placeholder="00" class="free-timer" autofocus="true" id="free-min" />
+      <span class="free">:</span>
+      <input type="text" placeholder="00" class="free-timer" id="free-sec" />
+    </div>
+    <!--
+      <div class="min-sec">
+        <button value="10" id="min-10" class="add-btn">10分</button>
+        <button value="5" id="min-5" class="add-btn">5分</button>
+        <button value="1" id="min-1" class="add-btn">1分</button>
+      </div>
+      -->
+    <div class="free-box">
+      <input type="button" value="start" id="free-start" />
+      <input type="button" value="stop" disabled="" id="free-stop" />
+      <input type="button" value="reset" disabled="" id="free-reset" />
+    </div>
+  </div>
+  <footer>
+    <div class="footer">
+      <div class="footer-link">
+        <li>このタイマーのコードは <a href="https://hide-kaku.com/web-timer">こちら</a>のものを一部改造しました</li>
+        <li><a>お知らせ</a></li>
+        <li><a>設定</a></li>
+        <li><a href="https://my-site.chakkun1121haru.repl.co/">my-siteへ</a></li>
+      </div>
+    </div>
+  </footer>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function (registration) {
+        // 登録成功
+        console.log('ServiceWorker の登録に成功しました。スコープ: ', registration.scope);
+      }).catch(function (err) {
+        // 登録失敗
+        console.log('ServiceWorker の登録に失敗しました。', err);
+      });
+    }
+  </script>
+</body>
+
+</html>
