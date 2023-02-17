@@ -1,17 +1,17 @@
 {
-    "name": "web タイマー v 1.0.0",
-    "short_name": "web timer",
-    "description": "広告なしのタイマーです。",
-    "icons": [
-        {
-            "src": "icon.png",
-            "sizes": "196x196",
-            "type": "image/png"
-        }
-    ],
-    "start_url": "index.html",
-    "display": "fullscreen",
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display_override": ["window-controls-overlay"]
+  "name": "web タイマー v 1.0.0",
+  "short_name": "web timer",
+  "description": "広告なしのタイマーです。",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display_override": ["window-controls-overlay"]
 }
