@@ -27,10 +27,8 @@ function startTimer() {
   const hour = document.getElementById("hourInput").value;
   const minute = document.getElementById("minuteInput").value;
   const second = document.getElementById("secondInput").value;
-  console.log(minute);
   //時間をミリ秒に変換
   time = hour * 60 * 60 * 1000 + minute * 60 * 1000 + second * 1000;
-  console.log(time);
   document.getElementById("start").disabled = true;
   document.getElementById("stop").disabled = false;
   document.getElementById("reset").disabled = false;
@@ -39,7 +37,10 @@ function startTimer() {
   isTimerMove = true;
 }
 function updateTimer() {
-  if (!isTimerMove) return;
+  if (!isTimerMove) {
+    document.title = "タイマーアプリ | chakkun1121";
+    return;
+  }
   const nowTime = new Date().getTime();
   const diff = time - (nowTime - startTime);
   //残り時間を表示(2桁表示)
@@ -76,9 +77,12 @@ function stopTimer() {
 function resetTimer() {
   isTimerMove = false;
   clearInterval(timer);
-  document.getElementById("hour").innerText = 0;
-  document.getElementById("minute").innerText = 0;
-  document.getElementById("second").innerText = 0;
+  document.getElementById("hour").innerText = 00;
+  document.getElementById("minute").innerText = 03;
+  document.getElementById("second").innerText = 00;
+  document.getElementById("hourInput").value = 0;
+  document.getElementById("minuteInput").value = 3;
+  document.getElementById("secondInput").value = 0;
   document.getElementById("start").disabled = false;
   document.getElementById("stop").disabled = true;
   document.getElementById("reset").disabled = true;

@@ -1,0 +1,6 @@
+* {
+  user-select: none;
+}
+header {
+  app-region: drag;
+}
