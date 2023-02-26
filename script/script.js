@@ -87,3 +87,22 @@ function resetTimer() {
   document.getElementById("stop").disabled = true;
   document.getElementById("reset").disabled = true;
 }
+async function showPip() {
+  const player = document.querySelector("main");
+
+  // 2. ピクチャーインピクチャーのウインドウの定義
+  const pipWindow = await documentPictureInPicture.requestWindow({
+    width: player.clientWidth,
+    height: player.clientHeight,
+    copyStyleSheets: true,
+  });
+
+  // 3. ウインドウに`#player`を追加
+  pipWindow.document.body.append(player);
+  pipWindow.addEventListener("unload", (event) => {
+    const playerContainer = document.querySelector("main");
+    const pipPlayer = event.target.querySelector("body");
+    playerContainer.append(pipPlayer);
+  });
+  // ピクチャーインピクチャーのウインドウは通常のポップアップと同様
+}
